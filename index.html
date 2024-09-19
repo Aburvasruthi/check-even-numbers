@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Number Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Even Number Checker</h1>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="checkEven()">Check Even</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkEven() {
+            const number = parseInt(document.getElementById('numberInput').value);
+            const resultElement = document.getElementById('result');
+
+            if (isNaN(number)) {
+                resultElement.textContent = "Please enter a valid number.";
+            } else {
+                if (number % 2 === 0) {
+                    resultElement.textContent = number + " is an even number.";
+                } else {
+                    resultElement.textContent = number + " is not an even number.";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
